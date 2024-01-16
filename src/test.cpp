@@ -3,8 +3,8 @@
 
 int main() {
     std::string city;
-    std::cout << "請輸入一個城市名稱: ";
+    std::cout << "type some words: ";
     std::getline(std::cin, city);
-    std::cout << "歡迎來到 " << city << "！" << std::endl;
+    std::cout << "welcome ~ " << city << "！" << std::endl;
     return 0;
 }
