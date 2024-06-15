@@ -1,5 +1,5 @@
 #include "ros/ros.h"
-#include "tutorial/AddTwoInts.h"  // 更改為正確的包名和服務
+#include "tutorial/AddTwoInts.h" // 更改為正確的包名和服務
 #include <cstdlib>
 
 int main(int argc, char **argv)
@@ -10,10 +10,9 @@ int main(int argc, char **argv)
     ROS_INFO("usage: add_two_ints_client X Y");
     return 1;
   }
-
   ros::NodeHandle n;
   ros::ServiceClient client = n.serviceClient<tutorial::AddTwoInts>("add_two_ints");
-  tutorial::AddTwoInts srv;  // 更改為正確的命名空間
+  tutorial::AddTwoInts srv;
   srv.request.a = atoll(argv[1]);
   srv.request.b = atoll(argv[2]);
   if (client.call(srv))
@@ -25,6 +24,9 @@ int main(int argc, char **argv)
     ROS_ERROR("Failed to call service add_two_ints");
     return 1;
   }
-
   return 0;
 }
+
+
+
+
